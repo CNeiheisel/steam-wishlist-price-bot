@@ -25,7 +25,7 @@ State (last known price and whether you've already been notified for a given low
 - Python 3.10+
 - A [Steam Web API key](https://steamcommunity.com/dev/apikey)
 - An [IsThereAnyDeal API key](https://isthereanydeal.com/apps/my/)
-- A Discord bot token ([Discord Developer Portal](https://discord.com/developers/applications)), with **Message Content Intent** enabled
+- A Discord bot (see setup below)
 - Your Steam profile's wishlist set to **Public**
 
 ## Setup
@@ -36,7 +36,15 @@ State (last known price and whether you've already been notified for a given low
    cd steam-wishlist-price-bot
    ```
 
-2. Create a virtual environment and install dependencies:
+2. Create a Discord bot and invite it to your server:
+   - Go to the [Discord Developer Portal](https://discord.com/developers/applications) → **New Application**
+   - **Bot** tab → **Reset Token** → copy it (this is `DISCORD_TOKEN`)
+   - Still on the **Bot** tab, under **Privileged Gateway Intents**, enable **Message Content Intent** and save
+   - **OAuth2 → URL Generator**: check the `bot` scope, and permissions `Send Messages` + `Read Message History`
+   - Open the generated URL and invite the bot to your server
+   - In Discord, enable **Settings → Advanced → Developer Mode**, then right-click the channel you want alerts in → **Copy Channel ID** (this is `CHANNEL_ID`), and right-click your own name → **Copy User ID** (this is `DISCORD_USER_ID`, used to `@mention` you on alerts)
+
+3. Create a virtual environment and install dependencies:
    ```bash
    python -m venv venv
    source venv/Scripts/activate   # Windows (Git Bash)
@@ -44,7 +52,7 @@ State (last known price and whether you've already been notified for a given low
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file in the project root with the following:
+4. Create a `.env` file in the project root with the following:
    ```
    DISCORD_TOKEN=your_discord_bot_token
    STEAM_API_KEY=your_steam_web_api_key
@@ -55,7 +63,7 @@ State (last known price and whether you've already been notified for a given low
    CHECK_INTERVAL_HOURS=6
    ```
 
-4. Run it:
+5. Run it:
    ```bash
    python bot.py
    ```
