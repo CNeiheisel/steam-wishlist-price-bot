@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-# ====== CONFIG (set these as environment variables, see .env.example) ======
+# Environment Variabl,es
 DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
 STEAM_API_KEY = os.environ.get("STEAM_API_KEY")
 ITAD_API_KEY = os.environ.get("ITAD_API_KEY")
@@ -15,7 +15,7 @@ STEAM_ID64 = os.environ.get("STEAM_ID64")
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "0"))
 DISCORD_USER_ID = os.environ.get("DISCORD_USER_ID", "")
 CHECK_INTERVAL_HOURS = float(os.environ.get("CHECK_INTERVAL_HOURS", "6"))
-# =============================================================================
+
 
 PRICES_FILE = "prices.json"
 
@@ -32,7 +32,7 @@ def save_prices(prices: dict) -> None:
         json.dump(prices, f, indent=2)
 
 
-# ---------- Steam / ITAD calls ----------
+# Calling Steam
 
 def fetch_wishlist_appids(steam_id64: str) -> list[int]:
     url = "https://api.steampowered.com/IWishlistService/GetWishlist/v1/"
@@ -139,7 +139,7 @@ def check_wishlist() -> list[dict]:
     return hits
 
 
-# ---------- Discord bot ----------
+# Discord Integration
 
 intents = discord.Intents.default()
 intents.message_content = True
