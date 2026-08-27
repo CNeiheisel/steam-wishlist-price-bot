@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-# Environment Variabl,es
+# Environment Variables
 DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
 STEAM_API_KEY = os.environ.get("STEAM_API_KEY")
 ITAD_API_KEY = os.environ.get("ITAD_API_KEY")
