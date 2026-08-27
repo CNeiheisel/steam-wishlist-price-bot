@@ -1,0 +1,5 @@
+venv/
+.env
+prices.json
+__pycache__/
+*.pyc
