@@ -1,5 +1,3 @@
-<img width="676" height="442" alt="image" src="https://github.com/user-attachments/assets/f495a911-6082-4fba-8f38-00f21188d248" /># Steam Wishlist Price Alert Bot
-
 A Discord bot that monitors a Steam wishlist and sends a targeted notification the moment a game reaches its **all-time lowest price**. Since Steam doesn't track historical pricing itself, the bot cross-references live price data from Steam's Web API against historical low data from the [IsThereAnyDeal](https://isthereanydeal.com/) API — so you know when a sale is actually the best a game has ever been, not just a discount.
 
 <img width="676" height="442" alt="image" src="https://github.com/user-attachments/assets/2632d6da-a99a-425c-a4fe-c217bbccca77" />
